@@ -18,18 +18,45 @@ h2 {
   text-align: center;
   font: normal normal 100 2em 'Open Sans', sans-serif;
   line-height: 1.5em;
+}
+h3
+{
+  text-align: left;
+  font-weight: bold;
+  background-color: ;
+}
+.container{
+  display:block;
+  width:70%;
+  margin-top: 50px;
+  margin-left: 0px;
+
+}
+.container1{
+  margin-left: 70%;
+  box-shadow: 0px 0px 2px 0px #888888;
+  display:block;
+  width:25%;
+  margin-top: -6.8%;
+  height: 30%;
+  background: white;
+  color:black;
 
 
 }
-
-.cards {
-  list-style-type: none;
-  padding: 0;
-  margin: 1em 0 0;
-  display: flex;
-  flex-wrap: wrap;
+.card__text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
 }
-
+.c{
+  display:block;
+  width:70%;
+  height:10%;
+  margin-top: 50px;
+  margin-left: 0px;
+}
 .card {
   background: #fff;
   -webkit-box-sizing: border-box;
@@ -39,7 +66,7 @@ h2 {
   box-sizing: border-box;
   padding: 0.5em;
   width: 100%;
-
+display: inline-block;
   float: left;
   margin-bottom: 2em;
   margin-right: 1%;
@@ -51,31 +78,6 @@ h2 {
 }
 
 
-.cover-wrapper {
-  position: relative;
-  display: block;
-  width: 70%;
-  margin-left: 15%;
-  overflow: hidden;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-.cover-wrapper:after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  box-shadow: inset 0 0 50px 0 rgba(0, 0, 0, 0.5);
-}
-
-.cover {
-  width: 100%;
-  display: block;
-}
 
 .title {
   font-size: 2em;
@@ -93,17 +95,6 @@ h2 {
   text-transform: uppercase;
 }
 
-.about {
-  font-weight: 100;
-}
-
-.about:before {
-  content: '....';
-  display: block;
-  color: #000;
-  font-size: 0.6em;
-  font-weight: bold;
-}
 
 
   .card {
@@ -135,6 +126,35 @@ header h2 {
   color: #fff;
   padding: 1%;
 
+
+
+}
+#head-bg1 {
+  margin-top: 10%;
+  display: block;
+  background-color: #069;
+  color: #fff;
+  padding: .1%;
+  width: 91%
+
+}
+#head-bg2 {
+  margin-top: 15%;
+  display: block;
+  background-color: #069;
+  color: #fff;
+  padding: .1%;
+  width: 91%
+
+}
+#head-bg3 {
+  margin-top: 10%;
+  display: block;
+  background-color: #069;
+  color: #fff;
+  padding: .1%;
+  width: 100%
+
 }
 #hea {
   display:block;
@@ -147,29 +167,112 @@ header h2 {
 </head>
 <body>
 
+
   <header id="head-bg">
-
-
     <h2>The Magazine</h2>
-
-
   </header>
-
   <h2> </h2>
 
-
   <!-- <ul class="cards"> -->
-    <b class="card">
-      <div class="content">
+  <div class="container">
+    <header id="head-bg1">
+<h3>National News</h3>
+</header>
+    <div class="card">
 
-        <div class="cover-wrapper">
-        </div>
         <span class="title"></span>
-        <span class="band-name"> </span>
-        <span class="about">
+        <div>
+          New Channel 1
+        </div>
 
-        </span>
+        <span class="band-name"> </span>
+        <p class="card__text">This handout will help you understand how paragraphs are formed, how to develop stronger paragraphs, and how to completely and clearly express your ideas.</p>
       </div>
+
+          <div class="card">
+
+              <span class="title"></span>
+              <div>
+                News Channel 2
+              </div>
+              <span class="band-name"> </span>
+              <p class="card__text">Demoi paragraph</p>
+            </div>
+            <div class="card">
+
+                <span class="title"></span>
+                <div>
+                News Channel 3
+                </div>
+                <span class="band-name"> </span>
+                              <p class="card__text">Demoi paragraph</p>
+
+              </div>
+              <div class="card">
+
+                  <span class="title"></span>
+                  <div>
+                News Channel 4
+                  </div>
+                  <span class="band-name"> </span>
+                                <p class="card__text">Demo paragraph</p>
+                </div>
+
+    </div>
+    <div class="container1">
+      <header id="head-bg3">
+    <h3>Campaigns</h3>
+    </header>
+    <iframe width="350" height="150" src="https://www.youtube.com/embed/h0e2HAPTGF4"></iframe>
+</div>
+    <div class=" container">
+      <h2></h2>
+    </div>
+
+    <div class="container">
+      <header id="head-bg2">
+  <h3>International News</h3>
+  </header>
+      <div class="card">
+
+          <span class="title"></span>
+          <div>
+      News Station 1
+          </div>
+          <span class="band-name"> </span>
+                        <p class="card__text">Demo paragraph</p>
+        </div>
+
+            <div class="card">
+
+                <span class="title"></span>
+                <div>
+                News Station 2
+                </div>
+                <span class="band-name"> </span>
+                                        <p class="card__text">Demo paragraph</p>
+              </div>
+              <div class="card">
+
+                  <span class="title"></span>
+                  <div>
+              News Station 3
+                  </div>
+                  <span class="band-name"> </span>
+                                          <p class="card__text">Demo paragraph</p>
+                </div>
+                <div class="card">
+
+                    <span class="title"></span>
+                    <div>
+                News Station 4
+                    </div>
+                    <span class="band-name"> </span>
+                                            <p class="card__text">Demo paragraph</p>
+                  </div>
+
+                </div>
+
 
 
 
