@@ -1,0 +1,77 @@
+function takeinput() {
+  var x= document.getElementById('form1');
+  if (x.style.display === 'block') {
+        x.style.display = 'none';
+        document.body.style.background = "black url('Background.jpeg') no-repeat center ";
+        document.body.style.backgroundSize = "500px";
+    } else {
+        x.style.display = 'block';
+        document.body.style.background = "black url('Circle.jpg') no-repeat fixed center";
+    }
+    var disp=document.getElementById("ans");
+    disp.innerHTML="";
+
+}
+
+function getap(){
+    var disp=document.getElementById("ans");
+    var number=document.getElementById("number").value;
+    var area=3.14 * number * number;
+    var per= 2 * 3.14 * number;
+    if(disp.innerHTML === "" && number !== ""){
+      disp.innerHTML = "Area: " + area + '\n' + "Perimeter: " + per ;
+      document.getElementById("number").value="";
+    }else {
+      disp.innerHTML="";
+    }
+
+}
+h2
+{
+  background-color:white;
+  
+}
+body{
+  background-color:black;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  background-size: 500px;
+}
+
+.button{
+  background-color: #0147FA;
+  color: white;
+border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+  display:inline-block;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+section{
+  margin-left: 80%;
+  display: block;
+  width: 15%;
+  border:outset;
+  border-color: white;
+}
+
+section1{
+
+  display: block;
+  width: 20%;
+  border:outset;
+  border-color: white;
+}
+legend{
+  font-size: 20px;
+  color: white;
+  background-color: black;
+}
+
+form{
+  display: none;
+}
