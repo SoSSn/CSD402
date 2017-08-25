@@ -20,24 +20,59 @@
   </section>
   <br>
   <section id= "button1">
-      <legend><strong>Enter sides of Triangle</strong></legend>
-      <input type="button" class="button" value="Triangle">
+      <legend><strong>Enter Base and Height of Triangle</strong></legend>
+
+      <input type="button" class="button" value="Triangle" onclick="takeinput1()">
+      <form id= "form2">
+          Enter Length:<input type="text" id="number1" name="number1"/><br/>
+          Enter Breadth:<input type="text" id="number2" name="number2"/><br/>
+          <input type="button" value="Calculate" onclick="getap1()"/>
+        </form>
+
+          <p id="ans1"></p>
   </section>
   <br>
+
+
   <section id= "button1">
     <legend><strong>Enter sides of Square</strong></legend>
-    <input type="button" class="button" value="Square">
+    <input type="button" class="button" value="Square" onclick="takeinput2()">
+    <form id= "form3">
+        Enter Length:<input type="text" id="number3" name="number3"/><br/>
+        <input type="button" value="Calculate" onclick="getap2()"/>
+      </form>
+
+        <p id="ans2"></p>
   </section>
   <br>
+
   <section id= "button1">
-      <legend><strong>Enter length and width of Rectangle </strong></legend>
-      <input type="button" class="button" value="Rectangle">
+    <legend><strong>Enter sides of Rectangle</strong></legend>
+    <input type="button" class="button" value="Rectangle" onclick="takeinput3()">
+    <form id= "form4">
+        Enter Length:<input type="text" id="number4" name="number4"/><br/>
+        Enter Breadth:<input type="text" id="number5" name="number5"/><br/>
+        <input type="button" value="Calculate" onclick="getap3()"/>
+      </form>
+
+        <p id="ans3"></p>
   </section>
   <br>
+
+
   <section id= "button1">
-      <legend><strong>Enter sides of Hexagon</strong></legend>
-      <input type="button" class="button" value="Hexagon">
+    <legend><strong>Enter side of Regular Hexagon</strong></legend>
+    <input type="button" class="button" value="Hexagon" onclick="takeinput4()">
+    <form id= "form5">
+        Enter Length:<input type="text" id="number6" name="number6"/><br/>
+
+        <input type="button" value="Calculate" onclick="getap4()"/>
+      </form>
+
+        <p id="ans4"></p>
   </section>
+  <br>
+
   <br>
 </body>
 </html>
