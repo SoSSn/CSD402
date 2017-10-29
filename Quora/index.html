@@ -1,475 +1,83 @@
+<!DOCTYPE html>
 <html>
 <head>
-<style>
-body{
-font-family: Arial, Helvetica, sans-serif; 
-margin: 50px auto;
-padding: 0;
-background:#f8f8ff;
-}
-
-h2{
-text-align: center;
-  font: normal normal 100 2em 'Open Sans', sans-serif;
-  line-height: 1.5em;
-  text-decoration:underline;
-  
-}
-
-.ques{
-display:inline-block;
-box-shadow:0px 0px 2px 0px grey;
-border-radius: 6px;
-background: #E2E095;
-position: relative;
-margin-top:200px;
-margin-left:30px;
-width: 53%;
-height:250px;
-}
-.ques1{
-display:inline-block;
-box-shadow:0px 0px 2px 0px grey;
-border-radius: 6px;
-background: #E2E095;
-position: relative;
-margin-top:60px;
-margin-left:30px;
-width: 53%;
-height:250px;
-}
-.ques upvote{
-	display:block;
-	width: 65px;
-	height: 30px;
-	color: white;
-	background: green;
-	box-shadow : 0px 0px 2px 0px grey;
-	cursor: pointer;
-	
-}
-.ques1 upvote{
-	display:block;
-	width: 65px;
-	height: 30px;
-	color: white;
-	background: green;
-	box-shadow : 0px 0px 2px 0px grey;
-	cursor: pointer;
-	
-}
-.ques downvote{
-	display:block;
-	margin-left:70px;
-	margin-top:-30px;
-	width: 73px;
-	height: 30px;
-	color: white;
-	background: red;
-	box-shadow : 0px 0px 2px 0px grey;
-	cursor: pointer;
-	
-}
-.ques1 downvote{
-	display:block;
-	margin-left:70px;
-	margin-top:-30px;
-	width: 73px;
-	height: 30px;
-	color: white;
-	background: red;
-	box-shadow : 0px 0px 2px 0px grey;
-	cursor: pointer;}
-.title {
-  font-size: 2em;
-  font-weight: bold;
-  letter-spacing: -1px;
-  display: block;
-  color: #069;
-}
-
-.band-name {
-  display: block;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-  text-transform: uppercase;
-}
-
-.megaMenu{
-	background: black;
-	border-top: black;
-	color: white;
-	font-size: 12px;
-	height: 40px;
-margin-top:0px;	
-	
-}
-.megaMenu a{
-	cursor: pointer;
-	display: block;
-	outline: none;
-	text-decoration: none;
-}
-.megaMenu li{
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	text-indent: 0;
-}
-.megaMenu ul{
-	margin: 0;
-	padding: 0;
-}
-.megaMenu > ul{
-	margin: auto;
-	position: relative;
-	width: 960px;
-}
-.megaMenu > ul > li{
-	border-left: 2px solid #4A8738;
-	display: inline-block;
-	float: left;
-	height: 40px;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	zoom: 1;
-	*display: inline;
-}
-.megaMenu > ul > li:first-child{
-	border-left: 2px solid transparent;
-}
-
-.megaMenu > ul > li:hover{		
-	background: #F5F2E7;
-}
-
-.megaMenu > ul > li:hover,
-.megaMenu > ul > li:hover + li{
-	border-left: 2px solid #6D4D24;
-}
-
-.megaMenu > ul > li:hover > a{
-	color: #427731;
-}
-
-.megaMenu > ul > li:hover > div{
-	display: block;
-	top: auto;
-	white-space: nowrap;
-}
-
-.megaMenu > ul > li > a{
-	color: white;
-	height: 100%;
-	padding: 0 10px;
-	text-transform: uppercase;
-}
-.megaMenu > ul > li > a > ins,
-.megaMenu > ul > li > a > span{
-	display: inline-block;
-	vertical-align: middle;
-	zoom: 1;
-	*display: inline;
-}
-
-.megaMenu > ul > li > a > ins{
-	height: 100%;
-}
-
-.megaMenu > ul > li > div{
-	background: #F5F2E7;
-	border: 2px solid #6D4D24;
-	border-top: 0;
-	display: none;
-	left: -2px;
-	padding: 0;
-	position: absolute;
-	top: auto;
-}
-
-.megaMenu > ul > li > div.left{
-	left: auto;
-	right: -2px;
-}
-
-.megaMenu > ul > li > div > ul{
-	display: inline-block;
-	padding: 10px;
-	vertical-align: top;
-	white-space: nowrap;
-	width: auto;
-	zoom: 1;
-	*display: inline;
-}
-
-.megaMenu > ul > li > div > ul > li{
-	margin: 4px 0;
-	padding: 0;
-	text-indent: 0;
-}
-
-.megaMenu > ul > li > div > ul > li.parent{
-	border-top: 1px dashed #908e8e;
-	margin: 4px 0 0;
-	padding: 4px 0 0;
-}
-
-.megaMenu > ul > li > div > ul > li:first-child{
-	border: none;
-	margin: 0;
-	padding: 0;
-}
-
-.megaMenu > ul > li > div > ul > li > a{
-	background: url('bullet_arrowlist-green.gif') no-repeat 0 3px;
-	color: grey;
-	font-size: 11px;
-	height: auto;
-	padding-left: 8px;
-}
-.megaMenu > ul > li > div > ul > li > a:hover{
-	color: #006983 !important;
-}
-
-.megaMenu > ul > li > div > ul > li.parent a{
-	background: none;
-	color: #427731;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 0;
-}
-.megaMenu > ul > li > div > ul > li.parent:first-child a{
-	border: none;
-	margin: 0;
-	padding: 0;
-}
-
-.megaMenu > ul > li.fold{
-	background: url('fold.gif') no-repeat;
-	font-size: 0; 
-	display: block;
-	height: 10px;
-	right: 219px;
-	position: absolute;
-	top: -12px;
-	width: 10px;
-}
-
-.megaMenu > ul > li.fold,
-.megaMenu > ul > li.foldOut{ border-left: none !important; }
-
-.megaMenu > ul > li.foldOut > ul{
-	background: #333333;
-	height: 57px;
-	position: absolute;
-	top: -12px;
-}
-
-.megaMenu > ul > li.foldOut	> ul:hover *{ border-color: transparent !important; }
-
-.megaMenu > ul > li.foldOut > ul > li{
-	cursor: pointer;
-	display: inline-block;
-	float: left;
-	line-height: 14px;
-	padding: 0 10px;
-	vertical-align: middle;
-	width: 148px;
-	zoom: 1;
-	*display: inline;
-}
-
-.megaMenu > ul > li.foldOut > ul > li:hover{
-	background: #F5F2E7;
-}
-
-.megaMenu > ul > li.foldOut > ul > li:hover a{
-	color: grey;
-}	
-
-.megaMenu > ul > li.foldOut > ul > li > a{
-	border-top: 1px solid #ccc;
-	color: white;
-	font-weight: bold;
-	padding: 7px 0;
-}
-
-.wrapper {
-  margin: 3em auto;
-  max-width: 960px;
-  padding: 0 1em;
-}
-
-.megaMenu > ul > li.foldOut > ul > li > a > span{ float: right; }
-.megaMenu > ul > li.foldOut > ul > li:first-child > a{ border: 0; }
-
-
-textarea.html-text-box {
-margin-top:30px;
-margin-left:10px;
-
-background-color:#D3D3D3;
-background-image:url(http://);background-repeat:no-repeat;background-attachment:fixed;border-width:1;border-style:solid;border-color:#cccccc;font-family:Arial;font-size:14pt;color:#000000;}
-input.html-text-box {
-margin-left:30px;
-background-color:#ffffff;font-family:Arial;font-size:14pt;color:#000000;}
-
-input[type=text] {
-margin-left:1230px;
-    width: 110px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-	use float:right;
-    font-size: 13px;
-    background-color: white;
-    background-image: url('searchicon.png');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 10px 16px 10px 20px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-    width: 80%;
-}
-</style>
+    <title>Quora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2> Quora Template </h2>
-<form>
-  <input type="text" name="search" placeholder="Search for Ques..">
-</form>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Quora</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+       <form class="navbar-form navbar-left">
+  <div class="input-group">
+    <input id="question" type="text" class="form-control" style="width : 500px;" placeholder="Ask your Question ... ">
+    <div class="input-group-btn">
+      <button class="btn btn-default" onclick="submitQuestion()" type="submit">
+        <i class="glyphicon glyphicon-question-sign"></i>
+      </button>
+    </div>
+  </div>
+</form> 
+      <ul class="nav navbar-nav navbar-left">
+        <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#profile">Answer</button>
+        <a href="questions.html" class="btn navbar-btn btn-default">My Questions</a>
+        <button class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#profile">Trending Questions</button>
+        <button class="btn btn-success navbar-btn" data-toggle="modal" data-target="#profile">My Profile</button>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- END OF NAVBAR -->
 
 
-<div class="megaMenu">
+<!-- DIVIDING THE PAGE INTO 2 PARTS -->
+  <div class="row">
 
+    <div class="col-sm-3 col-md-6 col-lg-4" style="background-color:transparent;">
+    
+    <div class="panel panel-default" style="max-height : 650px;">
+        <div class="panel-heading" style="background : #D9534F ;color:white">Subscriptions</div>
 
-	<ul>
+        <button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#addCategory"
+        style="margin-left : 15px; border-radius:30px; padding : 1.5%; font-size:12px;">
+            <i class="glyphicon glyphicon-plus"></i>Add more</button>
+            <hr/>
+        <div id="display_subs" class="panel-body">
 
-		<li>
+        </div>
+    </div>
 
-			<a href="#"><ins></ins><span>Home</span></a>
+    <!-- MAPS -->
+     <div class="panel panel-default">
+        <div class="panel-heading" style="background : #D9534F ;color:white">Search By Location</div>
 
-			<div>
-
-				
-				        
-					
-				
-
-			</div>
-
-		</li>
-
-		<li>
-
-			<a href="#"><ins></ins><span>Trending Questions</span></a>
-
-			<div>
-
-				<ul>
-					<li class="parent"><a href=""> News Related </a></li>
-					<li><a href="">Rio 2016 Olympics</a></li>
-					<li><a href="">US Elections</a></li>
-					<li><a href="">7th Pay Commission</a></li>
-					<li><a href="">Demonitization</a></li>
-					<li><a href=""> See All...</a></li>
-					<li class="parent"><a href="">People Related</a></li>
-					<li><a href="">Donald Trump</a></li>
-					<li><a href="">P.V Sindhu</a></li>
-										<li><a href="">See All...</a></li>
-
-					
-				</ul>   
-					
-				
-				<ul>
-					<li class="parent"><a href="">Movies Related</a></li>
-					<li><a href="">Udta Punjab</a></li>
-					<li><a href="">Jab Harry Met Sejal</a></li>
-										<li><a href="">See All...</a></li>
-										
-										<li class="parent"><a href=""</a> Health and Fitness</a></li>
-										<li class="parent"><a href=""</a> Personal Wellness</a></li>
-					
-					
-										
-				</ul>  
-
-			</div>
-
-		</li>
-
-		<li>
-			<a href="#"><ins></ins>New Questions<br /></a>
-			<div>
-				<ul>
-					<li class="parent"><a href="">Today (05-09-2017)</a></li>
-					
-
-					<li class="parent"><a href="">Last 2 Days</a></li>
-					<li class="parent"><a href="">Previous Week</a></li>
-					
-				</ul>  
-			</div>
-		</li>
-		<li>
-			<a href="#"><ins></ins>Category Wise</a>
-
-			<div class="left">
-				<ul>
-					<li class="parent"><a href="">Education</a></li>
-					<li><a href="">Computer Science</a></li>
-										<li><a href="">Mathematics</a></li>
-									<li><a href="">see all</a></li>
-
-
-					<li class="parent"><a href="#">Company</a></li>
-					<li><a href="">Google</a></li>
-										<li><a href="">Microsoft</a></li>
-										<li><a href="">Hitachi</a></li>
-										<li><a href="">see all</a></li>
-										</ul>
-										<ul>
-					<li class="parent"><a href="">Food</a></li>
-					<li class="parent"><a href="">Design</a></li>
-					<li><a href="">How to make home interiors attractive?</a></li>
-					<li class="parent"><a href="">Music</a></li>
-					
-					<li class="parent"><a href="#">Online Record Keeping System</a></li>
-					<li><a href="/home/site/us/programs-services/online-record-keeping-tips/">Time-Saving Tips</a></li>
-				</ul>  
-			</div>
-		</li>
-		<li>
-			
-			<a href="#"><ins></ins>Notifications</a>
-			
-		
-		</li>
-		<li>
-			
-			<a href="#"><ins></ins>Answer</span></a>
-			
-			
-		</li>
-		<li class="fold"></li>
-		<li class="foldOut">
-			<ul>
-				<li><a href="#">Sign In<span>&gt;</span></a></li>
-				<li><a href="#">Logout<span>&gt;</span></a></li>
-			</ul>
-		</li>
-	</ul>
-</div>
-
-<div class="wrapper">
-	<div id="map" style="width:900px;height:200px;background:white"></div>
-  <script>
+         <div class="input-group">
+    <input type="text" class="form-control" style="width : 250px;margin-left:50px;margin-top:10px;" placeholder="Enter Location">
+    <div class="input-group-btn">
+      <button class="btn btn-default" style="margin-right:80px;margin-top:10px;" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+            <hr/>
+        <div class="panel-body">
+            <div id="map" style="height:200px;background:yellow"></div>
+              <script>
     function initMap() {
         var myLatLng = {lat: 28.5258, lng: 77.5745};
 
@@ -481,41 +89,187 @@ input[type=text]:focus {
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
-          title: 'My Location'
+          label :{text: '!', color: "black"},
+          title: 'Your Location'
         });
+
       }
 
 </script>
 <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIO6hjwfwyr7g2PbU-GP2iHVaW6p3F84I&callback=initMap">
+src="https://maps.googleapis.com/maps/api/js?key= AIzaSyA_oIXg9jIDJ8O0Eo-922NY6_Q38IG0rRs &callback=initMap">
 </script>
+        </div>
+    </div>
+
+
+    </div>
+
+
+    <div class="col-sm-9 col-md-6 col-lg-8" style="background-color:transparent;">
+        
+        <div class="panel panel-default bootcards-media">
+        <div class="panel-body row">
+          <div class="row">
+            <div class="col-xs-2">
+              <img id="logo" src="https://image.flaticon.com/icons/svg/145/145847.svg">
+            </div>
+            <div class="col-xs-10">
+              <div class="row">
+                <p id="title">
+                  IWS <span class="inTitle">@sonali_shankar &middot; 23h</span>
+                </p>
+              </div>
+              <div class="row heading">
+                <h5>Using Android Text-to-Speech to Create a Smart Assistant: </h5>
+              </div>
+            </div>
+          </div>
+          <div class="row body-card">
+            <div class="col-xs-4">
+              <img src="http://papers.co/wallpaper/papers.co-vk51-android-lollipop-material-design-dark-yellow-pattern-36-3840x2400-4k-wallpaper.jpg">
+            </div>
+            <div class="col-xs-8">
+              <h4>Using Android Text-to-Speech to Create a...</h4>
+              <h5>Theodor Pandeli creates an Android app with text-to-speech that answers all of life's most important questions.</h5>
+              <h5>sitepoint.com</h5>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <p><i class="fa fa-reply" aria-hidden="true"></i></p>
+          <p><i class="fa fa-retweet" aria-hidden="true"></i> 3</p>
+          <p><i class="fa fa-heart" aria-hidden="true"></i> 4</p>
+          <p><i class="fa fa-ellipsis-h" aria-hidden="true"></i></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default bootcards-media">
+        <div class="panel-body row">
+          <div class="row">
+            <div class="col-xs-2">
+              <img id="logo" src="https://image.flaticon.com/icons/svg/145/145847.svg">
+            </div>
+            <div class="col-xs-10">
+              <div class="row">
+                <p id="title">
+                  IWS <span class="inTitle">@sonali_shankar &middot; 23h</span>
+                </p>
+              </div>
+              <div class="row heading">
+                <h5>Using Android Text-to-Speech to Create a Smart Assistant: </h5>
+              </div>
+            </div>
+          </div>
+          <div class="row body-card">
+            <div class="col-xs-4">
+              <img src="https://www.androidhive.info/wp-content/uploads/2015/04/material-design-banner.jpg">
+            </div>
+            <div class="col-xs-8">
+              <h4>Using Android Text-to-Speech to Create a...</h4>
+              <h5>Theodor Pandeli creates an Android app with text-to-speech that answers all of life's most important questions.</h5>
+              <h5>sitepoint.com</h5>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <p><i class="fa fa-reply" aria-hidden="true"></i></p>
+          <p><i class="fa fa-retweet" aria-hidden="true"></i> 3</p>
+          <p><i class="fa fa-heart" aria-hidden="true"></i> 4</p>
+          <p><i class="fa fa-ellipsis-h" aria-hidden="true"></i></p>
+        </div>
+      </div>
+
+      <div class="panel panel-default bootcards-media">
+        <div class="panel-body row">
+          <div class="row">
+            <div class="col-xs-2">
+              <img id="logo" src="https://image.flaticon.com/icons/svg/145/145847.svg">
+            </div>
+            <div class="col-xs-10">
+              <div class="row">
+                <p id="title">
+                  IWS <span class="inTitle">@sonali_shankar &middot; 23h</span>
+                </p>
+              </div>
+              <div class="row heading">
+                <h5>Using Android Text-to-Speech to Create a Smart Assistant: </h5>
+              </div>
+            </div>
+          </div>
+          <div class="row body-card">
+            <div class="col-xs-4">
+              <img src="https://www.androidhive.info/wp-content/uploads/2015/04/material-design-banner.jpg">
+            </div>
+            <div class="col-xs-8">
+              <h4>Using Android Text-to-Speech to Create a...</h4>
+              <h5>Theodor Pandeli creates an Android app with text-to-speech that answers all of life's most important questions.</h5>
+              <h5>sitepoint.com</h5>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <p><i class="fa fa-reply" aria-hidden="true"></i></p>
+          <p><i class="fa fa-retweet" aria-hidden="true"></i> 3</p>
+          <p><i class="fa fa-heart" aria-hidden="true"></i> 4</p>
+          <p><i class="fa fa-ellipsis-h" aria-hidden="true"></i></p>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+<!-- END OF DIVISION OF PAGE INTO 2 PARTS -->
+
+
+<!-- Modal -->
+
+
+    <!-- Add Category Modal-->
+<div id="addCategory" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Who do you want to subscribe to?</h4>
+      </div>
+      <div class="category modal-body">
+        <textarea id="category" placeholder="Type here .."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="subscribe" onclick="Subscribe()" type="button" class="btn btn-danger" data-dismiss="modal">Subscribe</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 
- <div class="ques"
-  <span class="title"></span>
-                    <div>
-               <h3>Ques: What is the future of Turing Machine?</h3>
-                    </div>
-                    <span class="band-name"> </span>
-<p> It's hard to choose where Alan Turing had the biggest impact on history. The British mathematician is known as the father of computing thanks to his work on what he called a universal machine - which provided the framework for development of digital computing - and he also helped significantly shorten the Second World War through his work with the codebreakers of Bletchley Park. </p>
+    <!-- PROFILE MODAL-->
+<div id="profile" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
-<upvote>Upvote</upvote>
-<downvote>Downvote</downvote>
+    </div>
+  </div>
 </div>
-<div class="ques1"
-  <span class="title"></span>
-                    <div>
-               <h3> Ques: If the Coca Cola recipe is secret, how are so many bottles produced every day worldwide?</h3>
-                    </div>
-                    <span class="band-name"> </span>
-<p> The Coca-Cola Company manufactures the syrup that contains the flavor of Coca-Cola, and sells the syrup to bottling companies around the world.
 
-The bottling companies add carbonated water and bottle the product for local sale. </p>
+<!-- END OF MODALS -->
 
-<upvote>Upvote</upvote>
-<downvote>Downvote</downvote>
-</div>
-     <form method="post" action="http://"><textarea name="comments" cols="30" rows="5" class="html-text-box">Comments here...</textarea><br><input type="submit" value="Submit" class="html-text-box"></form>   
+
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC--hFjgsejPeOtEBFT4RsLocacos8_Jqs",
+    authDomain: "quoras-1508725410720.firebaseapp.com",
+    databaseURL: "https://quoras-1508725410720.firebaseio.com",
+    projectId: "quoras-1508725410720",
+    storageBucket: "quoras-1508725410720.appspot.com",
+    messagingSenderId: "153945242063"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="action.js"></script>
 </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quora : My Questions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Questions</th>
+        <th>Answers</th>
+        <th>Upvotes</th>
+        <th>Downvotes</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody id="table_body">
+
+    </tbody>
+  </table>
+</div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC--hFjgsejPeOtEBFT4RsLocacos8_Jqs",
+    authDomain: "quoras-1508725410720.firebaseapp.com",
+    databaseURL: "https://quoras-1508725410720.firebaseio.com",
+    projectId: "quoras-1508725410720",
+    storageBucket: "quoras-1508725410720.appspot.com",
+    messagingSenderId: "153945242063"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="action.js"></script>
+</body>
+</html>
