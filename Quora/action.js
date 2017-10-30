@@ -36,7 +36,7 @@ function Subscribe(){
 
         var mQuestion = question.value;
         firebase_ref.child("Questions").child("My Questions").push().set(mQuestion);
-        window.alert("Question successfully submitted.");
+        window.alert("Question submitted Successfully !!!");
     }
 
     //DISPLAYING QUESTIONS ASKED ON questions.html
@@ -48,3 +48,11 @@ function Subscribe(){
         $("#table_body").append("<tr><td>"+ qu + "</td><td><button>Read</button></td><td>5</td><td>5</td><td>"+timestamp+"</td></tr>");
 
     });
+    
+    var loc= document.getElementById("loc");
+    function submitLocation(){
+
+        var mLoc = loc.value;
+        firebase_ref.child("Locations").push().set(mLoc);
+        window.alert("Location successfully submitted.");
+    }
