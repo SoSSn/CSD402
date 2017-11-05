@@ -36,7 +36,7 @@
       <ul class="nav navbar-nav navbar-left">
         <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#profile">Answer</button>
         <a href="questions.html" class="btn navbar-btn btn-default">My Questions</a>
-        <button class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#profile">Trending Questions</button>
+        <button class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#Trending">Trending Questions</button>
         <button class="btn btn-success navbar-btn" data-toggle="modal" data-target="#profile">My Profile</button>
       </ul>
     </div>
@@ -67,10 +67,9 @@
         <div class="panel-heading" style="background : #D9534F ;color:white">Search By Location</div>
 
          <div class="input-group">
-            <input id="loc"
-     "text" class="form-control" style="width : 250px;margin-left:50px;margin-top:10px;" placeholder="Enter Location">
+    <input type="text" id="city_name" class="form-control" style="width : 250px;margin-left:50px;margin-top:10px;" placeholder="Enter Location">
     <div class="input-group-btn">
-      <button class="btn btn-default" onclick="submitLocation()" style="margin-right:80px;margin-top:10px;" type="submit">
+      <button class="btn btn-default" onclick="getCity()" style="margin-right:80px;margin-top:10px;" type="submit">
         <i class="glyphicon glyphicon-search"></i>
       </button>
     </div>
@@ -255,23 +254,49 @@ src="https://maps.googleapis.com/maps/api/js?key= AIzaSyA_oIXg9jIDJ8O0Eo-922NY6_
   </div>
 </div>
 
-<!-- END OF MODALS -->
+<div id="Trending" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="dropdown">
+        <button style="align-content:center;" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cities
+  <span class="caret"></span></button>
+        <ul id="cities" class="dropdown-menu">
+          <li onclick="Delhi()"><a>Delhi</a></li>
+          <li onclick="Noida()"><a>Noida</a></li>
+          <li onclick="Gurgaon()"><a>Gurgaon</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:150px;" class="modal-dialog">
+    <div class="modal-content">
+      <ul id="trending_list" class="list-group">
 
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- END OF MODALS -->
 
 
 <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyCZwUz1ZpBZlIfhvL-EJCrcNEtZBaG24qs",
-    authDomain: "quora-9ccb8.firebaseapp.com",
-    databaseURL: "https://quora-9ccb8.firebaseio.com",
-    projectId: "quora-9ccb8",
-    storageBucket: "quora-9ccb8.appspot.com",
-    messagingSenderId: "710198197553"
+    apiKey: "AIzaSyC--hFjgsejPeOtEBFT4RsLocacos8_Jqs",
+    authDomain: "quoras-1508725410720.firebaseapp.com",
+    databaseURL: "https://quoras-1508725410720.firebaseio.com",
+    projectId: "quoras-1508725410720",
+    storageBucket: "quoras-1508725410720.appspot.com",
+    messagingSenderId: "153945242063"
   };
   firebase.initializeApp(config);
 </script>
+
+<script type="text/javascript" src="delhi.json"></script>
+<script type="text/javascript" src="noida.json"></script>
+<script type="text/javascript" src="gurugram.json"></script>
 <script src="action.js"></script>
 </body>
 </html>

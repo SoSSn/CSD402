@@ -36,7 +36,7 @@ function Subscribe(){
 
         var mQuestion = question.value;
         firebase_ref.child("Questions").child("My Questions").push().set(mQuestion);
-        window.alert("Question submitted Successfully !!!");
+        window.alert("Question successfully submitted.");
     }
 
     //DISPLAYING QUESTIONS ASKED ON questions.html
@@ -48,11 +48,78 @@ function Subscribe(){
         $("#table_body").append("<tr><td>"+ qu + "</td><td><button>Read</button></td><td>5</td><td>5</td><td>"+timestamp+"</td></tr>");
 
     });
-    
-    var loc= document.getElementById("loc");
-    function submitLocation(){
 
-        var mLoc = loc.value;
-        firebase_ref.child("Locations").push().set(mLoc);
-        window.alert("Location successfully submitted.");
-    }
+
+// GET THE NAME OF THE LOCATION AND ADD TO THE LIST IN THE MODAL
+var city_name = document.getElementById("city_name");
+function getCity(){
+
+    var mcity_name = city_name.value;
+    //add city name to the dropdown list
+
+    $('#cities').append("<li onclick='Default()'><a>"+mcity_name+"</a></li>");
+    window.alert(mcity_name + " added as a new city!");
+}
+
+//LOAD THE JSON FILE FROM THE LOCAL DIRECTORY
+
+function loadJSON(file, callback) {
+
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', file, true);
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);
+}
+
+//DELHI QUESTIONS
+function Delhi(){
+
+    loadJSON("delhi.json", function (response) {
+
+        var data = JSON.parse(response);
+        $('#trending_list').html("<li class='list-group-item list-group-item-success'>" + data[0].question+" </li>");
+        $('#trending_list').append("<li class='list-group-item list-group-item-success'>" + data[1].question + "</li>");
+        $('#trending_list').append("<li class='list-group-item list-group-item-success'>" + data[2].question + "</li>");
+
+
+    });
+}
+
+// NOIDA QUESTIONS
+function Noida() {
+
+    loadJSON("noida.json", function (response) {
+
+        var data = JSON.parse(response);
+        $('#trending_list').html("<li class='list-group-item list-group-item-success'>" + data[0].question + " </li>");
+        $('#trending_list').append("<li class='list-group-item list-group-item-success'>" + data[1].question + "</li>");
+        $('#trending_list').append("<li class='list-group-item list-group-item-success'>" + data[2].question + "</li>");
+
+
+    });
+}
+
+//GURGAON QUESTIONS
+function Gurgaon() {
+
+    loadJSON("gurugram.json", function (response) {
+
+        var data = JSON.parse(response);
+        $('#trending_list').html("<li class='list-group-item list-group-item-success'>" + data[0].question + " </li>");
+        $('#trending_list').append("<li class='list-group-item list-group-item-success'>" + data[1].question + "</li>");
+        $('#trending_list').append("<li class='list-group-item list-group-item-success'>" + data[2].question + "</li>");
+
+
+    });
+}
+
+//IF NO POST FOR CITY IS FOUND
+function Default(){
+    $('#trending_list').html("<li class='list-group-item list-group-item-danger'>No Post Available</lli>" );
+}
